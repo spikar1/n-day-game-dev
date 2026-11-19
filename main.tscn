@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b3n8mvyloohdc"]
 
 [ext_resource type="PackedScene" uid="uid://bma0uanulnvby" path="res://player_base.tscn" id="1_ig7tw"]
+[ext_resource type="Material" uid="uid://dwtxvw3osogbs" path="res://roof_material.tres" id="2_0xm2m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -27,37 +28,97 @@ shadow_enabled = true
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1981858, 0)
 
-[node name="Level" type="Node3D" parent="." unique_id=1620202375]
+[node name="Level Ground Floor" type="Node3D" parent="." unique_id=1620202375]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Level" unique_id=2101626016]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.483211, -0.14514208, -8.954748)
+[node name="CSGBox3D" type="CSGBox3D" parent="Level Ground Floor" unique_id=2101626016]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.207737, -0.14514208, -23.025858)
 use_collision = true
-size = Vector3(31.411255, 0.28735352, 34.719673)
+size = Vector3(71.885574, 0.28735352, 76.740585)
 
-[node name="House" type="CSGBox3D" parent="Level" unique_id=2008807136]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.646738, 3.6853948, -5.4769177)
+[node name="House" type="CSGBox3D" parent="Level Ground Floor" unique_id=2008807136]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.476313, 3.6853948, -17.19117)
+material_override = ExtResource("2_0xm2m")
 use_collision = true
-size = Vector3(9.293579, 7.6533813, 8.261665)
+size = Vector3(30.952728, 7.6533813, 31.690172)
 
-[node name="Door" type="CSGBox3D" parent="Level/House" unique_id=1598674028]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9422169, -1.8302765, 3.8375225)
+[node name="Door" type="CSGBox3D" parent="Level Ground Floor/House" unique_id=1598674028]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9422169, -1.8302765, 15.730782)
 operation = 2
 use_collision = true
 size = Vector3(2.938385, 3.9928284, 3.7271595)
 
-[node name="Door2" type="CSGBox3D" parent="Level/House" unique_id=1099869895]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6689749, -0.8306656, 3.8375225)
+[node name="Door2" type="CSGBox3D" parent="Level Ground Floor/House" unique_id=1099869895]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6689749, -0.8306656, 14.955568)
 operation = 2
 use_collision = true
 size = Vector3(2.5580597, 1.9936066, 3.7271595)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="Level/House" unique_id=734193772]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.085998535, -0.94955444, -0.36916733)
+[node name="Door3" type="CSGBox3D" parent="Level Ground Floor/House" unique_id=1944177085]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.533477, -0.8306656, 14.955568)
 operation = 2
 use_collision = true
-size = Vector3(8.878418, 9.05603, 7)
+size = Vector3(2.5580597, 1.9936066, 3.7271595)
 
-[node name="Slope" type="CSGBox3D" parent="Level" unique_id=106815909]
-transform = Transform3D(1, 0, 0, 0, 0.8024727, -0.59668875, 0, 0.59668875, 0.8024727, 2.9917889, -0.14897162, -5.8166504)
+[node name="Door4" type="CSGBox3D" parent="Level Ground Floor/House" unique_id=361916070]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.869573, -0.8306675, 6.824629)
+operation = 2
 use_collision = true
-size = Vector3(4.3168945, 2.465332, 9.025879)
+size = Vector3(2.5580597, 1.9936066, 3.7271595)
+
+[node name="Door5" type="CSGBox3D" parent="Level Ground Floor/House" unique_id=689762852]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.869573, -0.8306675, -5.6478252)
+operation = 2
+use_collision = true
+size = Vector3(2.5580597, 1.9936066, 3.7271595)
+
+[node name="Door6" type="CSGBox3D" parent="Level Ground Floor/House" unique_id=893362637]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.780701, -0.8306675, -15.454287)
+operation = 2
+use_collision = true
+size = Vector3(2.5580597, 1.9936066, 3.7271595)
+
+[node name="Door7" type="CSGBox3D" parent="Level Ground Floor/House" unique_id=173913633]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.563984, -0.8306675, -15.454287)
+operation = 2
+use_collision = true
+size = Vector3(2.5580597, 1.9936066, 3.7271595)
+
+[node name="Door8" type="CSGBox3D" parent="Level Ground Floor/House" unique_id=509368831]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.948498, -0.8306694, -12.023481)
+operation = 2
+use_collision = true
+size = Vector3(2.5580597, 1.9936066, 3.7271595)
+
+[node name="Door9" type="CSGBox3D" parent="Level Ground Floor/House" unique_id=624038817]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.17614, -0.8306694, 6.020485)
+operation = 2
+use_collision = true
+size = Vector3(2.5580597, 1.9936066, 3.7271595)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level Ground Floor/House" unique_id=734193772]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08041382, -0.4597168, -0.02651596)
+material_override = ExtResource("2_0xm2m")
+operation = 2
+use_collision = true
+size = Vector3(29.793152, 10.035706, 30.834717)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Level Ground Floor/House" unique_id=1255597800]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, -0.14315224, 3.534511, -0.105205536)
+size = Vector3(30.50946, 0.5916748, 31.432709)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Level Ground Floor/House" unique_id=2023097287]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, -2.2157001, 3.534511, -13.372599)
+operation = 2
+size = Vector3(11.126389, 0.5916748, 4.4099846)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level Ground Floor/House" unique_id=623705928]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 1, -6.8851643, -0.20260978, -13.258097)
+size = Vector3(3.298523, 8.065918, 4.4923096)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Level Ground Floor/House" unique_id=316445821]
+transform = Transform3D(0.8464265, 0.5325054, 0, -0.5325054, 0.8464265, 0, 0, 0, 1, -0.80387497, -2.6152196, -13.258097)
+size = Vector3(14.326172, 6.205078, 4.4923096)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Level Ground Floor" unique_id=799180257]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.140484, 3.9848995, -16.331036)
+omni_range = 16.345823

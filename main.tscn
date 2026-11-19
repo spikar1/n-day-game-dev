@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://b3n8mvyloohdc"]
+
+[ext_resource type="Script" uid="uid://dfslcwjlvq4ex" path="res://player.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://cn1exm21ltu2v" path="res://player-camera.gd" id="2_0xm2m"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_ig7tw"]
+sky_material = SubResource("ProceduralSkyMaterial_7dm0k")
+
+[sub_resource type="Environment" id="Environment_0xm2m"]
+background_mode = 2
+sky = SubResource("Sky_ig7tw")
+glow_enabled = true
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rtihg"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_rtihg"]
+
+[node name="Node3D" type="Node3D" unique_id=1235143467]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1200190341]
+environment = SubResource("Environment_0xm2m")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1127199673]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Player Base" type="CharacterBody3D" parent="." unique_id=1768994761]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1981858, 0)
+script = ExtResource("1_ig7tw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player Base" unique_id=584535193]
+shape = SubResource("CapsuleShape3D_rtihg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player Base" unique_id=852016263]
+mesh = SubResource("CapsuleMesh_rtihg")
+
+[node name="Camera Parent" type="Node3D" parent="Player Base" unique_id=2013028353]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9073486e-06, 8.519417, 5.207208)
+script = ExtResource("2_0xm2m")
+
+[node name="Camera3D" type="Camera3D" parent="Player Base/Camera Parent" unique_id=1347354669]
+transform = Transform3D(1, 0, 0, 0, 0.55256385, 0.8334706, 0, -0.8334706, 0.55256385, 0, 0, 0)
+
+[node name="Camera Raycast" type="RayCast3D" parent="Player Base" unique_id=1316546959]
+
+[node name="Level" type="Node3D" parent="." unique_id=1620202375]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Level" unique_id=2101626016]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.483211, -0.14514208, -8.954748)
+use_collision = true
+size = Vector3(31.411255, 0.28735352, 34.719673)
+
+[node name="House" type="CSGBox3D" parent="Level" unique_id=2008807136]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.646738, 3.6853948, -5.4769177)
+use_collision = true
+size = Vector3(9.293579, 7.6533813, 8.261665)
+
+[node name="Door" type="CSGBox3D" parent="Level/House" unique_id=1598674028]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9422169, -1.8302765, 3.8375225)
+operation = 2
+use_collision = true
+size = Vector3(2.938385, 3.9928284, 3.7271595)
+
+[node name="Door2" type="CSGBox3D" parent="Level/House" unique_id=1099869895]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6689749, -0.8306656, 3.8375225)
+operation = 2
+use_collision = true
+size = Vector3(2.5580597, 1.9936066, 3.7271595)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Level/House" unique_id=734193772]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.085998535, -0.94955444, -0.36916733)
+operation = 2
+use_collision = true
+size = Vector3(8.878418, 9.05603, 7)
+
+[node name="Slope" type="CSGBox3D" parent="Level" unique_id=106815909]
+transform = Transform3D(1, 0, 0, 0, 0.8024727, -0.59668875, 0, 0.59668875, 0.8024727, 2.9917889, -0.14897162, -5.8166504)
+use_collision = true
+size = Vector3(4.3168945, 2.465332, 9.025879)

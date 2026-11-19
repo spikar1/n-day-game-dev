@@ -21,4 +21,4 @@ func _process(delta: float) -> void:
 	else:
 		camera_object.position = position
 		
-	print(ray.get_collider())
+	##print(ray.get_collider())
